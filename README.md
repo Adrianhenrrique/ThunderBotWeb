@@ -1,12 +1,34 @@
-# React + Vite
+# ThunderBot ⚡
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![ThunderBot Banner](https://i.imgur.com/placeholder.png) <!-- Replace with your actual banner image -->
 
-Currently, two official plugins are available:
+> The ultimate Discord bot for moderation, music, economy and community engagement
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
+- 🔨 **Advanced Moderation**: Auto-moderation, warnings, mutes, bans
+- 🎶 **High-Quality Music**: YouTube, Spotify and SoundCloud support
+- 💸 **Virtual Economy**: Currency system with daily rewards and shop
+- 🛠️ **Custom Commands**: Create server-specific commands
+- 📊 **Dashboard**: Beautiful web interface for bot management
+- 🌍 **Multi-Language**: Supports English, Portuguese and Spanish
 
-## Expanding the ESLint configuration
+## 📥 Installation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Add to Your Server
+[![Invite ThunderBot](https://img.shields.io/badge/Invite_To_Your_Server-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com/oauth2/authorize?client_id=YOUR_CLIENT_ID&permissions=8&scope=bot%20applications.commands)
+
+### Self-Hosting
+```bash
+# Clone the repository
+git clone https://github.com/Adrianhenrrique/ThunderBot.git
+cd ThunderBot
+
+# Install dependencies
+npm install
+
+# Configuration
+cp .env.example .env
+# Edit the .env file with your credentials
+
+# Start the bot
+npm start
