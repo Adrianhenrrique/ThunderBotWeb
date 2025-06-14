@@ -1,0 +1,144 @@
+/* footer.module.css */
+
+.footer {
+  background-color: var(--card-bg);
+  color: var(--text);
+  padding: 3rem 2rem 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footerContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footerSection {
+  margin-bottom: 2rem;
+}
+
+.footerTitle {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.footerDescription {
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.footerSubtitle {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: var(--text);
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.footerSubtitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background-color: var(--primary);
+}
+
+.footerLinks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footerLinks li {
+  margin-bottom: 0.75rem;
+}
+
+.footerLink {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footerLink:hover {
+  color: var(--primary);
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.socialIcon {
+  font-size: 1.5rem;
+  color: var(--text-muted);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.socialIcon:hover {
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.footerBottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 2rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.copyright {
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.madeWith {
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+.heartIcon {
+  color: #ff4d4d;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .footerContainer {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .footerContainer {
+    grid-template-columns: 1fr;
+  }
+  
+  .footerSection {
+    text-align: center;
+  }
+  
+  .footerSubtitle::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .socialLinks {
+    justify-content: center;
+  }
+}

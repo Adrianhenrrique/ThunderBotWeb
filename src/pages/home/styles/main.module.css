@@ -1,0 +1,256 @@
+/* main.module.css */
+
+.main {
+  padding-top: 80px;
+  min-height: 100vh;
+  background-color: var(--background);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+}
+
+/* Hero Section */
+.hero {
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+  text-align: center;
+  color: white;
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.heroTitle {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 800;
+}
+
+.heroSubtitle {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.heroButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.primaryButton, .secondaryButton {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.primaryButton {
+  background-color: white;
+  color: var(--primary);
+}
+
+.primaryButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.secondaryButton {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.secondaryButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Stats Section */
+.statsSection {
+  padding: 4rem 2rem;
+  background-color: var(--card-bg);
+}
+
+.statsGrid, .loadingStats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.statCard {
+  background-color: var(--background);
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.statCard h3 {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.statNumber {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+}
+
+.loadingStats {
+  padding: 2rem;
+}
+
+.statCardLoading {
+  background-color: var(--background);
+  padding: 2rem;
+  border-radius: 8px;
+  height: 100px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 0.3; }
+  100% { opacity: 0.6; }
+}
+
+/* Features Section */
+.featuresSection {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.sectionSubtitle {
+  text-align: center;
+  color: var(--text-muted);
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.featureCard {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featureCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.featureIcon {
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.featureTitle {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--text);
+}
+
+.featureDescription {
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* CTA Section */
+.ctaSection {
+  padding: 5rem 2rem;
+  background-color: var(--primary);
+  text-align: center;
+  color: white;
+}
+
+.ctaContent {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ctaTitle {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.ctaText {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.ctaButton {
+  background-color: white;
+  color: var(--primary);
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+  
+  .heroSubtitle {
+    font-size: 1.25rem;
+  }
+  
+  .statsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .featuresGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroButtons {
+    flex-direction: column;
+  }
+  
+  .primaryButton, .secondaryButton {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+}
