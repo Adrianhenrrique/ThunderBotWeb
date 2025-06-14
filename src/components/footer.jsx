@@ -21,7 +21,7 @@ function Footer() {
               <FaDiscord className={Style.socialIcon} />
             </a>
             <a 
-              href="https://github.com/seu-usuario/thunderbot" 
+              href="https://github.com/Adrianhenrrique/ThunderBotWeb" 
               target="_blank" 
               rel="noopener noreferrer"
               aria-label="GitHub"
