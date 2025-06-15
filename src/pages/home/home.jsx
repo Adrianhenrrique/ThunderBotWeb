@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import Main from './components/main'
+import Main from './Main/main.jsx'
 
 function Home() {
 

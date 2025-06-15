@@ -1,0 +1,142 @@
+
+/* Estilos Base */
+.aboutContainer, .contactContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100vw;
+  margin: 0 auto;
+  padding: 2rem;
+  color: var(--text);
+}
+
+.aboutContainer{
+  margin-top: 55px;
+}
+
+/* Hero Section */
+.heroSection {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  padding: 4rem 2rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.heroTitle {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.heroSubtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* About Section */
+.aboutSection {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.aboutCard, .teamCard, .contactCard, .contactFormCard {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sectionTitle {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--primary);
+}
+
+.aboutText {
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: var(--text-muted);
+}
+
+/* Stats Grid */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.statItem {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(88, 101, 242, 0.1);
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.statItem:hover {
+  transform: translateY(-5px);
+}
+
+.statIcon {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.statNumber {
+  display: block;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.statLabel {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* Team Section */
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.teamMember {
+  text-align: center;
+}
+
+.memberPhoto {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1rem;
+  border: 3px solid var(--primary);
+}
+
+.memberName {
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+  color: var(--text);
+}
+
+.memberRole {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
