@@ -1,4 +1,4 @@
-/* Variáveis atualizadas para tema de relâmpago */
+/* Variáveis de tema */
 :root {
   --primary: #6e48ff;
   --primary-light: #9d65ff;
@@ -39,19 +39,13 @@
 }
 
 @keyframes pulse {
-  0% { opacity: 0.6; }
-  50% { opacity: 0.3; }
-  100% { opacity: 0.6; }
-}
-
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
 /* Estilos Base */
-.aboutContainer {
+.contactContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -63,7 +57,7 @@
   margin-top: 55px;
 }
 
-/* Hero Section com efeito de tempestade */
+/* Hero Section */
 .heroSection {
   background: linear-gradient(135deg, var(--primary-darker) 0%, var(--background-darker) 100%);
   padding: 5rem 2rem;
@@ -147,13 +141,19 @@
   font-weight: bold;
 }
 
-/* About Section */
-.aboutSection {
+/* Contact Section */
+.contactSection {
   display: grid;
   grid-template-columns: 1fr;
   gap: 3rem;
   width: 100%;
   max-width: 1200px;
+}
+
+@media (min-width: 992px) {
+  .contactSection {
+    grid-template-columns: 2fr 1fr;
+  }
 }
 
 .thunderCard {
@@ -209,213 +209,183 @@
   background: linear-gradient(to right, var(--primary), var(--secondary));
 }
 
-.aboutText {
-  line-height: 1.8;
-  margin-bottom: 2rem;
+/* Contact Form */
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formLabel {
   color: var(--text-muted);
-  font-size: 1.1rem;
-}
-
-/* Stats Grid */
-.statsGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
-.thunderStat {
-  background: rgba(110, 72, 255, 0.05);
-  padding: 2rem 1.5rem;
-  border-radius: 12px;
-  transition: var(--transition);
-  position: relative;
-  overflow: hidden;
-}
-
-.thunderStat:hover {
-  background: rgba(110, 72, 255, 0.1);
-  transform: translateY(-5px);
-}
-
-.statLightning {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(to right, var(--primary), var(--secondary));
-  opacity: 0;
-  transition: var(--transition);
-}
-
-.thunderStat:hover .statLightning {
-  opacity: 1;
-}
-
-.statIcon {
-  font-size: 2.5rem;
-  color: var(--secondary);
-  margin-bottom: 1rem;
-}
-
-.statNumber {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: 0.5rem;
-  background: linear-gradient(to right, var(--primary), var(--secondary));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.statLabel {
-  color: var(--text-muted);
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-/* Team Section */
-.teamGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 3rem;
-  margin-top: 2rem;
-}
-
-.teamMember {
-  text-align: center;
-  padding: 2rem;
-  background: rgba(110, 72, 255, 0.05);
-  border-radius: 12px;
-  transition: var(--transition);
-}
-
-.teamMember:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
-}
-
-.photoContainer {
-  position: relative;
-  width: 150px;
-  height: 150px;
-  margin: 0 auto 1.5rem;
-}
-
-.memberPhoto {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid var(--primary);
-  position: relative;
-  z-index: 2;
-}
-
-.photoLightning {
-  position: absolute;
-  top: -5px;
-  left: -5px;
-  right: -5px;
-  bottom: -5px;
-  border-radius: 50%;
-  background: linear-gradient(45deg, var(--primary), var(--secondary));
-  z-index: 1;
-  opacity: 0;
-  transition: var(--transition);
-}
-
-.teamMember:hover .photoLightning {
-  opacity: 0.3;
-  animation: thunder 2s infinite;
-}
-
-.memberName {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  color: var(--text);
-}
-
-.memberRole {
-  color: var(--secondary);
-  font-size: 1rem;
-  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
   font-weight: 500;
 }
 
-.memberStats {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-top: 1.5rem;
+.formInput {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(110, 72, 255, 0.2);
+  border-radius: 8px;
+  padding: 1rem;
+  color: var(--text);
+  font-size: 1rem;
+  transition: var(--transition);
 }
 
-.memberStat {
+.formInput:focus {
+  outline: none;
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 3px rgba(110, 72, 255, 0.1);
+}
+
+.formTextarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.thunderButton {
+  background: linear-gradient(to right, var(--primary), var(--primary-dark));
+  color: white;
+  border: none;
+  padding: 1.25rem 2rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 0.9rem;
-  color: var(--text-muted);
   justify-content: center;
+  gap: 0.75rem;
+  transition: var(--transition);
+  margin-top: 1rem;
 }
 
-.memberStatIcon {
+.thunderButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(110, 72, 255, 0.3);
+  animation: pulse 1s infinite;
+}
+
+.buttonIcon {
+  font-size: 1.25rem;
+}
+
+/* Contact Methods */
+.contactMethods {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contactMethod {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.methodIconContainer {
+  width: 50px;
+  height: 50px;
+  background: rgba(110, 72, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.contactMethod:hover .methodIconContainer {
+  background: rgba(110, 72, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.methodIcon {
+  font-size: 1.5rem;
   color: var(--secondary);
 }
 
+.methodContent {
+  flex: 1;
+}
+
+.methodTitle {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.methodText {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.methodLink {
+  color: var(--secondary);
+  font-weight: 500;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: var(--transition);
+}
+
+.methodLink span {
+  transition: var(--transition);
+}
+
+.methodLink:hover {
+  color: var(--primary-light);
+}
+
+.methodLink:hover span {
+  transform: translateX(3px);
+}
+
 /* Responsividade */
-@media (max-width: 992px) {
+@media (max-width: 768px) {
   .heroTitle {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
   
   .heroSubtitle {
-    font-size: 1.25rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .aboutContainer {
-    padding: 1rem;
+    font-size: 1.2rem;
   }
   
-  .heroSection {
-    padding: 4rem 1rem;
-  }
-  
-  .heroTitle {
-    font-size: 2rem;
-  }
-  
-  .aboutCard, .teamCard {
+  .contactCard, .infoCard {
     padding: 2rem;
-  }
-  
-  .statsGrid {
-    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 576px) {
+  .heroTitle {
+    font-size: 1.8rem;
+  }
+  
   .titleWrapper {
     flex-direction: column;
     gap: 0.5rem;
-  }
-  
-  .heroTitle {
-    font-size: 1.8rem;
-    text-align: center;
   }
   
   .sectionTitle {
     font-size: 1.5rem;
   }
   
-  .teamGrid {
-    grid-template-columns: 1fr;
+  .contactMethod {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .methodIconContainer {
+    margin-bottom: 1rem;
   }
 }

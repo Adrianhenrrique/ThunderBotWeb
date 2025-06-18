@@ -1,20 +1,23 @@
 import { useState, useEffect } from 'react'
 import styles from './Main.module.css'
 import { 
-  FiDisc, FiSettings, FiShield, FiMusic, 
-  FiMessageSquare, FiUserPlus, FiTrendingUp 
+  FiZap, FiSettings, FiShield, FiMusic, 
+  FiMessageSquare, FiUserPlus, FiBarChart2,
+  FiServer, FiUsers, FiCommand, FiClock
 } from 'react-icons/fi'
+import { FaBolt } from 'react-icons/fa'
 
 const Main = () => {
   const [stats, setStats] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
+  const [isRaining, setIsRaining] = useState(true)
 
   useEffect(() => {
     const fetchBotStats = async () => {
       setIsLoading(true)
       try {
         // Simulação de API
-        await new Promise(resolve => setTimeout(resolve, 1000))
+        await new Promise(resolve => setTimeout(resolve, 800))
         
         setStats({
           servers: 128,
@@ -30,23 +33,30 @@ const Main = () => {
     }
 
     fetchBotStats()
+
+    // Efeito de chuva/relâmpagos
+    const interval = setInterval(() => {
+      setIsRaining(prev => !prev)
+    }, 5000)
+
+    return () => clearInterval(interval)
   }, [])
 
   const features = [
     {
-      icon: <FiDisc className={styles.featureIcon} />,
-      title: "Fácil Configuração",
-      description: "Configure o bot em minutos com nosso painel intuitivo"
+      icon: <FiZap className={styles.featureIcon} />,
+      title: "Velocidade do Raio",
+      description: "Resposta instantânea a todos os comandos"
     },
     {
       icon: <FiShield className={styles.featureIcon} />,
-      title: "Moderação Avançada",
-      description: "Ferramentas poderosas para manter seu servidor seguro"
+      title: "Moderação Poderosa",
+      description: "Ferramentas de moderação com a força de um trovão"
     },
     {
       icon: <FiMusic className={styles.featureIcon} />,
-      title: "Sistema de Música",
-      description: "Reproduza música de alta qualidade em seus canais de voz"
+      title: "Música Eletrizante",
+      description: "Sistema de música de alta qualidade"
     },
     {
       icon: <FiMessageSquare className={styles.featureIcon} />,
@@ -55,43 +65,50 @@ const Main = () => {
     },
     {
       icon: <FiUserPlus className={styles.featureIcon} />,
-      title: "Bem-vindo Automático",
-      description: "Dê as boas-vindas aos novos membros com mensagens personalizadas"
+      title: "Impacto Instantâneo",
+      description: "Boas-vindas automáticas com efeito imediato"
     },
     {
       icon: <FiSettings className={styles.featureIcon} />,
-      title: "Totalmente Customizável",
-      description: "Ajuste cada aspecto do bot às suas necessidades"
+      title: "Customização Total",
+      description: "Configure cada aspecto do bot às suas necessidades"
     }
   ]
 
   return (
     <>
       {/* Hero Section */}
-      <section className={`${styles.hero} fade-in`}>
+      <section className={`${styles.hero} ${isRaining ? styles.raining : ''} fade-in`}>
         <div className={`container ${styles.heroContent}`}>
-          <h1 className={styles.heroTitle}>ThunderBot</h1>
+          <div className={styles.heroTitleContainer}>
+            <FaBolt className={styles.thunderIcon} />
+            <h1 className={styles.heroTitle}>THUNDERBOT</h1>
+          </div>
           <p className={styles.heroSubtitle}>
-            O bot de Discord mais poderoso para sua comunidade
+            O bot de Discord com a <span className={styles.highlight}>força de um raio</span> para sua comunidade
           </p>
           
           <div className={styles.heroButtons}>
             <a 
               href="https://discord.com/oauth2/authorize?client_id=SEU_CLIENT_ID&scope=bot&permissions=8" 
-              className={`btn btn-primary ${styles.heroButton}`}
+              className={`${styles.heroButton} ${styles.primaryButton}`}
               target="_blank"
               rel="noopener noreferrer"
             >
-              Adicionar ao Discord
+              <FiZap /> Adicionar ao Discord
             </a>
             <a 
               href="/dashboard" 
-              className={`btn btn-secondary ${styles.heroButton}`}
+              className={`${styles.heroButton} ${styles.secondaryButton}`}
             >
               Painel de Controle
             </a>
           </div>
         </div>
+        
+        {/* Efeitos de raio */}
+        <div className={styles.lightning}></div>
+        <div className={styles.lightning2}></div>
       </section>
 
       {/* Stats Section */}
@@ -106,22 +123,22 @@ const Main = () => {
           ) : (
             <div className={styles.statsGrid}>
               <div className={`${styles.statCard} fade-in`}>
-                <FiTrendingUp className={styles.statIcon} />
+                <FiServer className={styles.statIcon} />
                 <h3>Servidores</h3>
                 <p className={styles.statNumber}>{stats?.servers.toLocaleString()}+</p>
               </div>
               <div className={`${styles.statCard} fade-in`}>
-                <FiTrendingUp className={styles.statIcon} />
+                <FiUsers className={styles.statIcon} />
                 <h3>Usuários</h3>
                 <p className={styles.statNumber}>{stats?.users.toLocaleString()}+</p>
               </div>
               <div className={`${styles.statCard} fade-in`}>
-                <FiTrendingUp className={styles.statIcon} />
+                <FiCommand className={styles.statIcon} />
                 <h3>Comandos</h3>
                 <p className={styles.statNumber}>{stats?.commands}+</p>
               </div>
               <div className={`${styles.statCard} fade-in`}>
-                <FiTrendingUp className={styles.statIcon} />
+                <FiClock className={styles.statIcon} />
                 <h3>Uptime</h3>
                 <p className={styles.statNumber}>{stats?.uptime}</p>
               </div>
@@ -133,9 +150,10 @@ const Main = () => {
       {/* Features Section */}
       <section className={`section ${styles.featuresSection}`}>
         <div className="container">
-          <div className="section-title">
-            <h2>Recursos Incríveis</h2>
-            <p>Tudo que você precisa para gerenciar sua comunidade</p>
+          <div className={styles.sectionTitle}>
+            <FiZap className={styles.sectionIcon} />
+            <h2>Recursos Eletrizantes</h2>
+            <p>Potência e velocidade como um raio para seu servidor</p>
           </div>
           
           <div className={styles.featuresGrid}>
@@ -145,7 +163,9 @@ const Main = () => {
                 className={`${styles.featureCard} fade-in`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                {feature.icon}
+                <div className={styles.featureIconContainer}>
+                  {feature.icon}
+                </div>
                 <h3>{feature.title}</h3>
                 <p>{feature.description}</p>
               </div>
@@ -157,17 +177,20 @@ const Main = () => {
       {/* CTA Section */}
       <section className={`${styles.ctaSection} fade-in`}>
         <div className={`container ${styles.ctaContent}`}>
-          <h2 className={styles.ctaTitle}>Pronto para turbinar seu servidor?</h2>
+          <div className={styles.ctaTitleContainer}>
+            <FaBolt className={styles.ctaThunderIcon} />
+            <h2 className={styles.ctaTitle}>Pronto para um choque de energia?</h2>
+          </div>
           <p className={styles.ctaText}>
-            Adicione o ThunderBot agora e leve sua comunidade para o próximo nível
+            Adicione o ThunderBot agora e eletrize sua comunidade
           </p>
           <a 
             href="https://discord.com/oauth2/authorize?client_id=SEU_CLIENT_ID&scope=bot&permissions=8" 
-            className={`btn btn-primary ${styles.ctaButton}`}
+            className={`${styles.ctaButton} ${styles.primaryButton}`}
             target="_blank"
             rel="noopener noreferrer"
           >
-            Adicionar ao Discord
+            <FiZap /> Adicionar ao Discord
           </a>
         </div>
       </section>
