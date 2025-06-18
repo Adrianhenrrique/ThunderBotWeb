@@ -15,9 +15,9 @@ export default function About() {
         <div className={Style.aboutCard}>
           <h2 className={Style.sectionTitle}>Nossa História</h2>
           <p className={Style.aboutText}>
-            O ThunderBot nasceu em 2025 da necessidade de ter um bot completo que realmente atendesse às necessidades
-            das comunidades brasileiras no Discord. Combinando moderação eficiente com recursos divertidos, criamos uma
-            solução tudo-em-um.
+            Nascido em 2025, o ThunderBot foi criado para resolver um desafio: oferecer às comunidades brasileiras do 
+            Discord um bot verdadeiramente completo. Combinando ferramentas de moderação poderosa com funcionalidades 
+            divertidas, ele é a solução tudo-em-um que faltava.
           </p>
           
           <div className={Style.statsGrid}>
