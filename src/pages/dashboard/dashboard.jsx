@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
 import { 
   FiZap, FiSettings, FiShield, FiCommand, 
   FiPlus, FiTrash2, FiSave, FiEdit2,
@@ -176,15 +177,13 @@ export default function Dashboard() {
         </nav>
         
         <div className={styles.sidebarFooter}>
-          <a 
-            href="https://discord.gg/seu-convite" 
-            target="_blank" 
-            rel="noopener noreferrer"
+          <Link 
+            to="/support"
             className={styles.supportLink}
           >
             <FaDiscord className={styles.supportIcon} />
             Suporte
-          </a>
+          </Link>
         </div>
       </aside>
 

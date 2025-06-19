@@ -3,6 +3,7 @@ import iconBot from '../../assets/logo.png'
 import { useState, useEffect } from 'react'
 import { FaBolt, FaDiscord } from 'react-icons/fa'
 import { FiZap, FiHome, FiUser, FiMail, FiBook } from 'react-icons/fi'
+import { Link } from 'react-router-dom';
 
 function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -49,32 +50,32 @@ function Header() {
           <nav className={Style.header__nav} aria-label="Menu principal">
             <ul className={Style.header__nav_ul}>
               <li>
-                <a href="/" className={Style.header__nav__link} onClick={() => setMobileMenuOpen(false)}>
+                <Link to="/" className={Style.header__nav__link} onClick={() => setMobileMenuOpen(false)}>
                   <FiHome className={Style.nav_icon} />
                   <span>Home</span>
                   <div className={Style.link_lightning}></div>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/about" className={Style.header__nav__link} onClick={() => setMobileMenuOpen(false)}>
+                <Link to="/about" className={Style.header__nav__link} onClick={() => setMobileMenuOpen(false)}>
                   <FiUser className={Style.nav_icon} />
                   <span>Sobre</span>
                   <div className={Style.link_lightning}></div>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/contact" className={Style.header__nav__link} onClick={() => setMobileMenuOpen(false)}>
+                <Link to="/contact" className={Style.header__nav__link} onClick={() => setMobileMenuOpen(false)}>
                   <FiMail className={Style.nav_icon} />
                   <span>Contato</span>
                   <div className={Style.link_lightning}></div>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/docs" className={Style.header__nav__link} onClick={() => setMobileMenuOpen(false)}>
+                <Link to="/docs" className={Style.header__nav__link} onClick={() => setMobileMenuOpen(false)}>
                   <FiBook className={Style.nav_icon} />
                   <span>Documentação</span>
                   <div className={Style.link_lightning}></div>
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>

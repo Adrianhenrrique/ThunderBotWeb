@@ -1,6 +1,7 @@
-import { FaDiscord, FaGithub, FaHeart, FaBolt } from 'react-icons/fa'
-import { FiZap, FiMail, FiShield, FiBook, FiStar, FiHelpCircle } from 'react-icons/fi'
-import Style from './footer.module.css'
+import { Link } from 'react-router-dom';
+import { FaDiscord, FaGithub, FaHeart, FaBolt } from 'react-icons/fa';
+import { FiZap, FiMail, FiShield, FiBook, FiStar, FiHelpCircle } from 'react-icons/fi';
+import Style from './footer.module.css';
 
 function Footer() {
   return (
@@ -52,28 +53,28 @@ function Footer() {
           </h4>
           <ul className={Style.footerLinks}>
             <li>
-              <a href="/commands" className={Style.footerLink}>
+              <Link to="/commands" className={Style.footerLink}>
                 <FiZap className={Style.linkIcon} />
                 Comandos
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/documentation" className={Style.footerLink}>
+              <Link to="/documentation" className={Style.footerLink}>
                 <FiBook className={Style.linkIcon} />
                 Documentação
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/premium" className={Style.footerLink}>
+              <Link to="/premium" className={Style.footerLink}>
                 <FiStar className={Style.linkIcon} />
                 Premium
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/status" className={Style.footerLink}>
+              <Link to="/status" className={Style.footerLink}>
                 <FaBolt className={Style.linkIcon} />
                 Status
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -86,28 +87,28 @@ function Footer() {
           </h4>
           <ul className={Style.footerLinks}>
             <li>
-              <a href="/support" className={Style.footerLink}>
+              <Link to="/support" className={Style.footerLink}>
                 <FaDiscord className={Style.linkIcon} />
                 Servidor de Suporte
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/contact" className={Style.footerLink}>
+              <Link to="/contact" className={Style.footerLink}>
                 <FiMail className={Style.linkIcon} />
                 Contato
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/premium#faq" className={Style.footerLink}>
+              <Link to="/premium#faq" className={Style.footerLink}>
                 <FiHelpCircle className={Style.linkIcon} />
                 FAQ
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/report" className={Style.footerLink}>
+              <Link to="/report" className={Style.footerLink}>
                 <FiShield className={Style.linkIcon} />
                 Reportar Bug
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -120,19 +121,19 @@ function Footer() {
           </h4>
           <ul className={Style.footerLinks}>
             <li>
-              <a href="/terms" className={Style.footerLink}>
+              <Link to="/terms" className={Style.footerLink}>
                 Termos de Serviço
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/privacy" className={Style.footerLink}>
+              <Link to="/privacy" className={Style.footerLink}>
                 Política de Privacidade
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/cookies" className={Style.footerLink}>
+              <Link to="/cookies" className={Style.footerLink}>
                 Cookies
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -154,7 +155,7 @@ function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
 
-export default Footer
+export default Footer;

@@ -1,6 +1,7 @@
-import { FaBolt, FaDiscord, FaEnvelope, FaGithub } from 'react-icons/fa'
-import { FiZap, FiMail, FiMessageSquare } from 'react-icons/fi'
-import Style from './contact.module.css'
+import { Link } from 'react-router-dom';
+import { FaBolt, FaDiscord, FaEnvelope, FaGithub } from 'react-icons/fa';
+import { FiZap, FiMail, FiMessageSquare } from 'react-icons/fi';
+import Style from './contact.module.css';
 
 export default function Contact() {
   return (
@@ -129,5 +130,5 @@ export default function Contact() {
         </div>
       </section>
     </main>
-  )
+  );
 }

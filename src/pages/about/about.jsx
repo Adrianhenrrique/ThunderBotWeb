@@ -1,6 +1,7 @@
-import { FaBolt, FaServer, FaUserClock, FaCodeBranch } from 'react-icons/fa'
-import { FiZap, FiUsers, FiClock } from 'react-icons/fi'
-import Style from './about.module.css'
+import { Link } from 'react-router-dom';
+import { FaBolt, FaServer, FaUserClock, FaCodeBranch } from 'react-icons/fa';
+import { FiZap, FiUsers, FiClock } from 'react-icons/fi';
+import Style from './about.module.css';
 
 export default function About() {
   return (
@@ -15,6 +16,9 @@ export default function About() {
           <p className={Style.heroSubtitle}>
             O bot de Discord com a <span className={Style.highlight}>força de um raio</span> para sua comunidade
           </p>
+          <Link to="/commands" className={Style.heroLink}>
+            Explore os Comandos
+          </Link>
         </div>
         <div className={Style.lightningEffect}></div>
       </section>
@@ -37,18 +41,27 @@ export default function About() {
               <FaCodeBranch className={Style.statIcon} />
               <span className={Style.statNumber}>50+</span>
               <span className={Style.statLabel}>Comandos</span>
+              <Link to="/commands" className={Style.statLink}>
+                Saiba mais
+              </Link>
               <div className={Style.statLightning}></div>
             </div>
             <div className={`${Style.statItem} ${Style.thunderStat}`}>
               <FaServer className={Style.statIcon} />
               <span className={Style.statNumber}>500+</span>
               <span className={Style.statLabel}>Servidores</span>
+              <Link to="/servers" className={Style.statLink}>
+                Veja os servidores
+              </Link>
               <div className={Style.statLightning}></div>
             </div>
             <div className={`${Style.statItem} ${Style.thunderStat}`}>
               <FaUserClock className={Style.statIcon} />
               <span className={Style.statNumber}>24/7</span>
               <span className={Style.statLabel}>Online</span>
+              <Link to="/status" className={Style.statLink}>
+                Status do bot
+              </Link>
               <div className={Style.statLightning}></div>
             </div>
           </div>
@@ -86,10 +99,13 @@ export default function About() {
                   <span>24/7 dedicado</span>
                 </div>
               </div>
+              <Link to="/team" className={Style.memberLink}>
+                Conheça o time
+              </Link>
             </div>
           </div>
         </div>
       </section>
     </main>
-  )
+  );
 }
