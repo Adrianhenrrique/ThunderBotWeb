@@ -6,7 +6,7 @@ import {
   FiServer, FiUsers, FiCommand, FiClock
 } from 'react-icons/fi'
 import { FaBolt } from 'react-icons/fa'
-
+import { Link } from 'react-router-dom'
 const Main = () => {
   const [stats, setStats] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
@@ -97,12 +97,12 @@ const Main = () => {
             >
               <FiZap /> Adicionar ao Discord
             </a>
-            <a 
-              href="/dashboard" 
+            <Link 
+              to="/dashboard" 
               className={`${styles.heroButton} ${styles.secondaryButton}`}
             >
               Painel de Controle
-            </a>
+            </Link>
           </div>
         </div>
         
